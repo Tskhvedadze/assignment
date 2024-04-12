@@ -1,5 +1,7 @@
 import { useState } from "react";
 import SearchIcon from "../../assets/svg/Search.svg?react";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { ButtonPrimary } from "../Buttons/ButtonPrimary";
 
 type SearchInputProps = {
   onSearch: (searchTerm: string) => void;
@@ -7,6 +9,8 @@ type SearchInputProps = {
 
 export function SearchInput({ onSearch }: SearchInputProps) {
   const [searchTerm, setSearchTerm] = useState("");
+
+  const breakpoint = useMediaQuery();
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
@@ -16,6 +20,16 @@ export function SearchInput({ onSearch }: SearchInputProps) {
     e.preventDefault();
     onSearch(searchTerm);
   };
+
+  console.log(breakpoint);
+
+  if (breakpoint === "mobile") {
+    return (
+      <ButtonPrimary className=" p-[14px]">
+        <SearchIcon />
+      </ButtonPrimary>
+    );
+  }
 
   return (
     <form
