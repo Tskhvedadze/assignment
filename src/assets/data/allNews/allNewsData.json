@@ -1,0 +1,42 @@
+[
+  {
+    "id": 0,
+    "image": "images/pic1.png",
+    "uploadTime": "12.08.2023",
+    "about": "პოლიტიკა",
+    "text": "ქვემო ქართლის რეგიონში 20 მლნ ლარამდე ღირებულების",
+    "isMiddle": "false"
+  },
+  {
+    "id": 1,
+    "image": "images/pic2.png",
+    "uploadTime": "12.08.2023",
+    "about": "პოლიტიკა",
+    "text": "ქვემო ქართლის რეგიონში 20 მლნ ლარამდე ღირებულების",
+    "isMiddle": "false"
+  },
+  {
+    "id": 2,
+    "image": "images/pic3.png",
+    "uploadTime": "12.08.2023",
+    "about": "პოლიტიკა",
+    "text": "ქვემო ქართლის რეგიონში 20 მლნ ლარამდე ღირებულების",
+    "isMiddle": "true"
+  },
+  {
+    "id": 3,
+    "image": "images/pic4.png",
+    "uploadTime": "12.08.2023",
+    "about": "პოლიტიკა",
+    "text": "ქვემო ქართლის რეგიონში 20 მლნ ლარამდე ღირებულების",
+    "isMiddle": "false"
+  },
+  {
+    "id": 4,
+    "image": "images/pic1.png",
+    "uploadTime": "12.08.2023",
+    "about": "პოლიტიკა",
+    "text": "ქვემო ქართლის რეგიონში 20 მლნ ლარამდე ღირებულების",
+    "isMiddle": "false"
+  }
+]

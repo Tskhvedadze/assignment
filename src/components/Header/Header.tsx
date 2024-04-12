@@ -1,51 +1,87 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+
+import { Navigation } from "./Navigation";
+import { SearchInput } from "./SearchInput";
+import { ButtonPrimary } from "../Buttons/ButtonPrimary";
+
 import { headerData } from "../../assets/data";
 
-// import Arrow from "../assets/svg/Arrow.svg?react";
-import Arrow from "../../assets/svg/Arrow.svg?react";
+import Logo from "../../assets/svg/Logo.svg?react";
+import Instagram from "../../assets/svg/Instagram.svg?react";
+import Facebook from "../../assets/svg/Facebook.svg?react";
+import Burger from "../../assets/svg/burger.svg?react";
 
 export function Header() {
-  const [visible, setVisible] = useState(false);
+  const [isBurgerMenuVisible, setIsBurgerMenuVisible] = useState(false);
 
-  const mouseEnterHandler = () => setVisible(true);
-  const mouseLeaveHandler = () => setVisible(false);
+  const breakpoint = useMediaQuery();
+
+  useEffect(() => {
+    setIsBurgerMenuVisible(false);
+  }, [breakpoint]);
+
+  const burgerMenuToggle = () => {
+    setIsBurgerMenuVisible((prev) => !prev);
+  };
 
   return (
-    <ul className="w-full h-28 flex gap-8 justify-center items-center">
-      {headerData.slice(0, 4).map((data) => (
-        <li
-          className="font-noto leading-6 font-medium text-black_600"
-          key={data.id}
-        >
-          <a href={data.route}>{data.text}</a>
-        </li>
-      ))}
-      <div
-        className="relative font-noto leading-6 font-medium text-black_600 cursor-pointer"
-        onMouseEnter={mouseEnterHandler}
-        onMouseLeave={mouseLeaveHandler}
-      >
-        <div className="flex">
-          <p>სხვა</p>
-          <Arrow
-            className={`transition-transform transform ${
-              visible ? "rotate-180" : ""
-            }`}
-          />
+    <header className="px-4 tablet:px-14 desktopSM:px-12 relative">
+      <div className="flex items-center justify-between gap-5 max-w-[1280px] mx-auto py-[32px]">
+        <div className="flex tablet:max-w-[838px] tablet:w-full items-center">
+          <Logo />
+          {(breakpoint === "desktop" || breakpoint === "small") && (
+            <>
+              <div className=" w-[2px] h-[32px] rounded-[62px] bg-main_bg mx-6" />
+              <Navigation />
+            </>
+          )}
         </div>
-        {visible && (
-          <ul className="absolute left-0 top-full z-10 bg-white border border-gray-300  rounded shadow">
-            {headerData.slice(4).map((data) => (
-              <li
-                className="text-black_600 text-nowrap py-2 px-4 w-full"
-                key={data.id}
-              >
+
+        <div className="flex items-center gap-4">
+          {breakpoint !== "mobile" && (
+            <div className="flex items-center gap-2">
+              <ButtonPrimary>
+                <Instagram />
+              </ButtonPrimary>
+              <ButtonPrimary>
+                <Facebook />
+              </ButtonPrimary>
+            </div>
+          )}
+
+          <SearchInput onSearch={(searchTerm) => console.log(searchTerm)} />
+
+          {(breakpoint === "tablet" || breakpoint === "mobile") && (
+            <ButtonPrimary large onClick={burgerMenuToggle}>
+              <Burger />
+            </ButtonPrimary>
+          )}
+        </div>
+      </div>
+
+      {isBurgerMenuVisible && (
+        <div className="absolute top-full left-0 right-0 w-full bg-white px-4 pb-[24px] mobile:pb-24 ">
+          <ul className=" grid gap-10 pt-[34px] pb-12 mobile:pb-0 ">
+            {headerData.map((data) => (
+              <li key={data.id} className="font-noto">
                 <a href={data.route}>{data.text}</a>
               </li>
             ))}
           </ul>
-        )}
-      </div>
-    </ul>
+
+          {breakpoint === "mobile" && (
+            <div className="flex items-center justify-center gap-2">
+              <ButtonPrimary>
+                <Instagram />
+              </ButtonPrimary>
+              <ButtonPrimary>
+                <Facebook />
+              </ButtonPrimary>
+            </div>
+          )}
+        </div>
+      )}
+    </header>
   );
 }
