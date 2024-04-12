@@ -10,6 +10,7 @@ export default {
         black_600: "#657178",
         main_bg: "#F2F3F7",
         primary_light: "#F5F8FF",
+        primary_blue: "#585EE3",
       },
       screens: {
         desktopSM: "1241px",
@@ -18,5 +19,22 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    ({ addBase, theme }) => {
+      addBase({
+        ".scrollbar": {
+          overflowY: "auto",
+        },
+
+        ".scrollbar::-webkit-scrollbar": {
+          width: "6px",
+        },
+
+        ".scrollbar::-webkit-scrollbar-thumb": {
+          background: `${theme("colors.black_600")}`,
+          borderRadius: "64px",
+        },
+      });
+    },
+  ],
 };
