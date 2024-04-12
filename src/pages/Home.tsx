@@ -12,9 +12,9 @@ export default function Home() {
           imgSource={data.image}
           text={data.text}
           uploadTime={data.uploadTime}
-          truncate={data.truncate}
+          truncate={data.isMiddle}
           className={
-            data.id === 2
+            data.isMiddle === "true"
               ? " col-start-1 col-end-1 row-start-1 row-end-2 tablet:col-start-2 tablet:col-end-3 tablet:row-start-1 tablet:row-end-3 mobile:col-start-1 mobile:col-end-3 mobile:row-start-1 mobile:row-end-2 max-w-full "
               : ""
           }
