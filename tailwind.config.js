@@ -11,6 +11,11 @@ export default {
         main_bg: "#F2F3F7",
         primary_light: "#F5F8FF",
       },
+      screens: {
+        desktopSM: "1241px",
+        tablet: "1025px",
+        mobile: "601px",
+      },
     },
   },
   plugins: [],
