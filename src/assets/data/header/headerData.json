@@ -1,0 +1,37 @@
+[
+  {
+    "id": 0,
+    "text": "პოლიტიკა",
+    "route": "politics"
+  },
+  {
+    "id": 1,
+    "text": "საზოგადოება",
+    "route": "society"
+  },
+  {
+    "id": 2,
+    "text": "სამართალი",
+    "route": "law"
+  },
+  {
+    "id": 3,
+    "text": "ბიზნესი & ეკონომიკა",
+    "route": "business"
+  },
+  {
+    "id": 4,
+    "text": "ბიზნესი & ეკონომიკა",
+    "route": "business"
+  },
+  {
+    "id": 5,
+    "text": "ეკონომიკა",
+    "route": "economic"
+  },
+  {
+    "id": 6,
+    "text": "რელიგია",
+    "route": "religion"
+  }
+]
