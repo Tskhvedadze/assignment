@@ -3,6 +3,7 @@ import { headerData } from "../../assets/data";
 
 // import Arrow from "../assets/svg/Arrow.svg?react";
 import Arrow from "../../assets/svg/Arrow.svg?react";
+import { SearchInput } from "./SearchInput";
 
 export function Header() {
   const [visible, setVisible] = useState(false);
@@ -46,6 +47,8 @@ export function Header() {
           </ul>
         )}
       </div>
+
+      <SearchInput onSearch={(searchTerm) => console.log(searchTerm)} />
     </ul>
   );
 }
