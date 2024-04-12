@@ -25,7 +25,7 @@ export function SearchInput({ onSearch }: SearchInputProps) {
       <input
         type="text"
         placeholder="ძიება"
-        className="outline-none bg-transparent"
+        className="w-full outline-none bg-transparent"
         value={searchTerm}
         onChange={onChangeHandler}
       />

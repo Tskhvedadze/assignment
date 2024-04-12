@@ -1,54 +1,17 @@
-import { useState } from "react";
-import { headerData } from "../../assets/data";
-
-// import Arrow from "../assets/svg/Arrow.svg?react";
-import Arrow from "../../assets/svg/Arrow.svg?react";
+import { Navigation } from "./Navigation";
 import { SearchInput } from "./SearchInput";
+import Logo from "../../assets/svg/Logo.svg?react";
 
 export function Header() {
-  const [visible, setVisible] = useState(false);
-
-  const mouseEnterHandler = () => setVisible(true);
-  const mouseLeaveHandler = () => setVisible(false);
-
   return (
-    <ul className="w-full h-28 flex gap-8 justify-center items-center">
-      {headerData.slice(0, 4).map((data) => (
-        <li
-          className="font-noto leading-6 font-medium text-black_600"
-          key={data.id}
-        >
-          <a href={data.route}>{data.text}</a>
-        </li>
-      ))}
-      <div
-        className="relative font-noto leading-6 font-medium text-black_600 cursor-pointer"
-        onMouseEnter={mouseEnterHandler}
-        onMouseLeave={mouseLeaveHandler}
-      >
-        <div className="flex">
-          <p>სხვა</p>
-          <Arrow
-            className={`transition-transform transform ${
-              visible ? "rotate-180" : ""
-            }`}
-          />
-        </div>
-        {visible && (
-          <ul className="absolute left-0 top-full z-10 bg-white border border-gray-300  rounded shadow">
-            {headerData.slice(4).map((data) => (
-              <li
-                className="text-black_600 text-nowrap py-2 px-4 w-full"
-                key={data.id}
-              >
-                <a href={data.route}>{data.text}</a>
-              </li>
-            ))}
-          </ul>
-        )}
+    <header className="flex items-center justify-between max-w-[1280px] mx-auto">
+      <div className="flex max-w-[838px] w-full items-center">
+        <Logo />
+        <div className=" w-[2px] h-[32px] rounded-[62px] bg-main_bg mx-6" />
+        <Navigation />
       </div>
 
       <SearchInput onSearch={(searchTerm) => console.log(searchTerm)} />
-    </ul>
+    </header>
   );
 }
