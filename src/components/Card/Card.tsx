@@ -34,7 +34,7 @@ export function Card({
           <Tag>{about}</Tag>
         </div>
       )}
-      <p className={`${truncate === "true" ? "truncate" : ""}`}>{text}</p>
+      <p className={`${truncate === "false" ? "truncate" : ""}`}>{text}</p>
     </div>
   );
 }
