@@ -21,8 +21,6 @@ export function SearchInput({ onSearch }: SearchInputProps) {
     onSearch(searchTerm);
   };
 
-  console.log(breakpoint);
-
   if (breakpoint === "mobile") {
     return (
       <ButtonPrimary className=" p-[14px]">
