@@ -5,9 +5,11 @@ export default {
     extend: {
       fontFamily: {
         noto: ["Noto Sans Georgian"],
+        notoCaps: ["BPG Banner Caps"],
       },
       colors: {
         black_600: "#657178",
+        black_900: "#1D2D35",
         main_bg: "#F2F3F7",
         primary_light: "#F5F8FF",
         primary_blue: "#585EE3",

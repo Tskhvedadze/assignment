@@ -16,7 +16,7 @@ export function ListItem({
       <div>
         <div className="flex gap-2">
           <img src={image} alt="news" className="max-w-[96px] w-full h-full" />
-          <p>{description}</p>
+          <p className="headline3-small">{description}</p>
         </div>
         {!isLast && <div className="dashed_border my-4" />}
       </div>
@@ -25,11 +25,11 @@ export function ListItem({
 
   return (
     <div className="flex gap-2 flex-col">
-      <span className="text-primary_blue flex items-center gap-2">
+      <span className="small-text text-primary_blue flex items-center gap-2">
         <Clock /> {time} &#x2022; {date}
       </span>
 
-      <p>{description}</p>
+      <p className="headline3-small">{description}</p>
       {!isLast && <div className="dashed_border my-4" />}
     </div>
   );

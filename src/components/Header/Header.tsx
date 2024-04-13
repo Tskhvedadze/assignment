@@ -61,11 +61,13 @@ export function Header() {
       </div>
 
       {isBurgerMenuVisible && (
-        <div className="absolute top-full left-0 right-0 w-full bg-white px-4 pb-[24px] mobile:pb-24 ">
+        <div className="absolute z-50 top-full left-0 right-0 w-full bg-white px-4 pb-[24px] mobile:pb-24 ">
           <ul className=" grid gap-10 pt-[34px] pb-12 mobile:pb-0 ">
             {headerData.map((data) => (
-              <li key={data.id} className="font-noto">
-                <a href={data.route}>{data.text}</a>
+              <li key={data.id}>
+                <a className=" body-uppercase" href={data.route}>
+                  {data.text}
+                </a>
               </li>
             ))}
           </ul>
