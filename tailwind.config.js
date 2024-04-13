@@ -11,6 +11,7 @@ export default {
         black_600: "#657178",
         black_900: "#1D2D35",
         main_bg: "#F2F3F7",
+        light: "#ffffff",
         primary_light: "#F5F8FF",
         primary_blue: "#585EE3",
       },
@@ -18,6 +19,10 @@ export default {
         desktopSM: "1241px",
         tablet: "1025px",
         mobile: "601px",
+      },
+
+      boxShadow: {
+        custom: "0px 0px 20px 0px rgba(0, 0, 0, 0.1)",
       },
     },
   },

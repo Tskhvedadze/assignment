@@ -7,11 +7,13 @@ export function AllTopics() {
       {allNewsData.map((data) => (
         <Card
           key={data.id}
+          whiteBg
+          withTags
           about={data.about}
           imgSource={data.image}
           text={data.text}
           uploadTime={data.uploadTime}
-          truncate={data.isMiddle}
+          truncate={data.isMiddle === "false"}
           className={
             data.isMiddle === "true"
               ? " col-start-1 col-end-1 row-start-1 row-end-2 tablet:col-start-2 tablet:col-end-3 tablet:row-start-1 tablet:row-end-3 mobile:col-start-1 mobile:col-end-3 mobile:row-start-1 mobile:row-end-2 max-w-full "
