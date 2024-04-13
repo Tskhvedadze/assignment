@@ -1,6 +1,4 @@
-type TagProps = {
-  children: React.ReactNode;
-};
+import { TagProps } from "../types";
 
 export function Tag({ children }: TagProps) {
   return (

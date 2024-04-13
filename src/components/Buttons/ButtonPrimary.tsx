@@ -1,9 +1,4 @@
-import { ButtonHTMLAttributes } from "react";
-
-type ButtonPrimaryProps = {
-  children: React.ReactNode;
-  large?: true;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+import { ButtonPrimaryProps } from "../../types";
 
 export function ButtonPrimary({
   children,

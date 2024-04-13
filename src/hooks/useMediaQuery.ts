@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
+import { Breakpoints } from "../types";
 
-type Breakpoint = "desktop" | "small" | "tablet" | "mobile";
-
-export const useMediaQuery = (): Breakpoint => {
-  const [breakpoint, setBreakpoint] = useState<Breakpoint>("mobile");
+export const useMediaQuery = (): Breakpoints => {
+  const [breakpoint, setBreakpoint] = useState<Breakpoints>("mobile");
 
   useEffect(() => {
     const updateBreakpoint = () => {

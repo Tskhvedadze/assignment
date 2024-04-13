@@ -1,14 +1,11 @@
-import { CarouselPrimary } from "../Carousel/CarouselPrimary";
+import { CarouselPrimary } from "../CarouselPrimary";
+import { Tag } from "../Tag";
 
 import { carouselData } from "../../assets/data";
-import { Tag } from "../Tag/Tag";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { HomeComponentsProps } from "../../types";
 
-type MainTopicProps = {
-  className?: string;
-};
-
-export function MainTopic({ className }: MainTopicProps) {
+export function MainTopic({ className }: HomeComponentsProps) {
   const breakpoints = useMediaQuery();
 
   return (

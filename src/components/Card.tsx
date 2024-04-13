@@ -1,15 +1,5 @@
-import { Tag } from "../Tag/Tag";
-
-type CardProps = {
-  text: string;
-  imgSource: string;
-  uploadTime?: string;
-  about?: string;
-  truncate?: boolean;
-  withTags?: true;
-  className?: string;
-  whiteBg?: true;
-};
+import { CardProps } from "../types";
+import { Tag } from "./Tag";
 
 export function Card({
   imgSource,

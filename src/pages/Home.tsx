@@ -9,11 +9,11 @@ export default function Home() {
   const breakpoint = useMediaQuery();
 
   return (
-    <div className=" flex flex-col gap-6 tablet:gap-[66px]">
-      <div className="flex justify-evenly desktopSM:justify-between gap-[12px]">
+    <div className="flex flex-col gap-6 tablet:gap-[66px]">
+      <div className="flex justify-center gap-8">
         <MainTopic className="desktopSM:max-w-[900px] tablet:max-w-[700px]  w-full" />
         <AsideList
-          className=" hidden tablet:block"
+          className="hidden tablet:block"
           data={asideListData}
           title="ყველა სიახლე"
         />
@@ -22,26 +22,26 @@ export default function Home() {
       {(breakpoint === "tablet" || breakpoint === "mobile") && (
         <div className=" flex flex-col mobile:flex-row justify-between gap-6 mobile:gap-4">
           <AsideList
-            className=" mobile:w-[50%]"
+            className="mobile:w-[50%]"
             data={asideListData}
             title="ყველა სიახლე"
           />
           <AsideList
-            className=" mobile:w-[50%]"
+            className="mobile:w-[50%]"
             data={asideListPopularData}
             title="პოპულარული"
           />
         </div>
       )}
 
-      <div className="flex justify-evenly desktopSM:justify-between gap-[12px]">
-        <div className="flex flex-col gap-6 tablet:gap-[64px] desktopSM:max-w-[900px] tablet:max-w-[700px]  w-full">
+      <div className="flex justify-center gap-8">
+        <div className="flex flex-col gap-6 tablet:gap-16 desktopSM:max-w-[900px] tablet:max-w-[700px]  w-full">
           <KnownFacts />
           <AllTopics />
         </div>
 
         <AsideList
-          className=" hidden tablet:block"
+          className="hidden tablet:block"
           data={asideListPopularData}
           title="პოპულარული"
         />

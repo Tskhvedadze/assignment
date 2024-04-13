@@ -1,5 +1,9 @@
 import { useRef } from "react";
 import { ButtonSecondary } from "../Buttons/ButtonSecondary";
+import { Card } from "../Card";
+
+import { knownFactsData } from "../../assets/data";
+import { HomeComponentsProps } from "../../types";
 
 import RightArrow from "../../assets/svg/RightArrow.svg?react";
 import LeftArrow from "../../assets/svg/LeftArrow.svg?react";
@@ -8,14 +12,8 @@ import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { knownFactsData } from "../../assets/data";
-import { Card } from "../Card/Card";
 
-type KnownFactsProps = {
-  className?: string;
-};
-
-export function KnownFacts({ className }: KnownFactsProps) {
+export function KnownFacts({ className }: HomeComponentsProps) {
   const swiperRef = useRef<SwiperRef>(null);
 
   const slideNext = (): void => swiperRef?.current?.swiper.slideNext();
