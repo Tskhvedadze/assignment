@@ -1,15 +1,13 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { CarouselPrimaryProps } from "../types";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Pagination } from "swiper/modules";
 import { Navigation } from "swiper/modules";
-
-type CarouselPrimaryProps = {
-  data: { id: number; image: string }[];
-};
 
 export function CarouselPrimary({ data }: CarouselPrimaryProps) {
   const pagination = {

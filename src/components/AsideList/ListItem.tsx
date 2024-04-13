@@ -1,8 +1,6 @@
-import { ListDataT } from "./AsideList";
+import { ListItemProps } from "../../types";
 
 import Clock from "../../assets/svg/clock.svg?react";
-
-type ListItemProps = { isLast: boolean } & ListDataT;
 
 export function ListItem({
   time,

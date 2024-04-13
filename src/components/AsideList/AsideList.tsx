@@ -1,18 +1,6 @@
+import { AsideListProps } from "../../types";
+
 import { ListItem } from "./ListItem";
-
-export type ListDataT = {
-  id?: number;
-  time?: string;
-  date?: string;
-  image?: string;
-  description: string;
-};
-
-type AsideListProps = {
-  title: string;
-  className?: string;
-  data: ListDataT[];
-};
 
 export function AsideList({ title, data, className }: AsideListProps) {
   return (
