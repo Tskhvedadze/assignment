@@ -4,11 +4,17 @@ import { carouselData } from "../../assets/data";
 import { Tag } from "../Tag/Tag";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
-export function MainTopic() {
+type MainTopicProps = {
+  className?: string;
+};
+
+export function MainTopic({ className }: MainTopicProps) {
   const breakpoints = useMediaQuery();
 
   return (
-    <section className=" bg-white px-[12px] pt-[12px] pb-[24px] rounded-[20px] flex flex-col gap-4">
+    <section
+      className={` bg-white px-[12px] pt-[12px] pb-[24px] rounded-[20px] flex flex-col gap-4 ${className}`}
+    >
       <CarouselPrimary data={carouselData} />
 
       <div className=" flex flex-col gap-2">

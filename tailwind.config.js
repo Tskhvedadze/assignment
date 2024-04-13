@@ -16,6 +16,7 @@ export default {
         primary_blue: "#585EE3",
       },
       screens: {
+        desktopLG: "1440px",
         desktopSM: "1241px",
         tablet: "1025px",
         mobile: "601px",

@@ -11,14 +11,20 @@ import "swiper/css/pagination";
 import { knownFactsData } from "../../assets/data";
 import { Card } from "../Card/Card";
 
-export function KnownFacts() {
+type KnownFactsProps = {
+  className?: string;
+};
+
+export function KnownFacts({ className }: KnownFactsProps) {
   const swiperRef = useRef<SwiperRef>(null);
 
   const slideNext = (): void => swiperRef?.current?.swiper.slideNext();
   const slidePrev = (): void => swiperRef?.current?.swiper.slidePrev();
 
   return (
-    <section className="flex flex-col gap-[20px] px-[35px] py-[24px] bg-white rounded-[16px]">
+    <section
+      className={`flex flex-col gap-[20px] px-[35px] py-[24px] bg-white rounded-[16px] ${className}`}
+    >
       <div className="flex items-center justify-between">
         <h1 className=" body-uppercase">ცნობილი ფაქტები</h1>
 
@@ -35,13 +41,17 @@ export function KnownFacts() {
       <div className=" h-[206px] w-full">
         <Swiper
           ref={swiperRef}
-          slidesPerView={3}
+          slidesPerView={"auto"}
           spaceBetween={30}
+          centeredSlides={true}
           className=" h-full w-full"
           loop={true}
         >
           {knownFactsData.map((data) => (
-            <SwiperSlide key={data.id}>
+            <SwiperSlide
+              key={data.id}
+              className="max-w-[288px] mobile:max-w-[400px] "
+            >
               <Card
                 className=" bg-primary_light"
                 truncate={false}
