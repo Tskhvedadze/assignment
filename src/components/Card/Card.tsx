@@ -34,7 +34,9 @@ export function Card({
           <Tag>{about}</Tag>
         </div>
       )}
-      <p className={`${truncate === "false" ? "truncate" : ""}`}>{text}</p>
+      <p className={`body-medium ${truncate === "false" ? "truncate" : ""}`}>
+        {text}
+      </p>
     </div>
   );
 }
