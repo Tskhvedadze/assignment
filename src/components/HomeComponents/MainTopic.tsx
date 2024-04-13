@@ -2,8 +2,11 @@ import { CarouselPrimary } from "../Carousel/CarouselPrimary";
 
 import { carouselData } from "../../assets/data";
 import { Tag } from "../Tag/Tag";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 export function MainTopic() {
+  const breakpoints = useMediaQuery();
+
   return (
     <section className=" bg-white px-[12px] pt-[12px] pb-[24px] rounded-[20px] flex flex-col gap-4">
       <CarouselPrimary data={carouselData} />
@@ -18,10 +21,12 @@ export function MainTopic() {
           ქვემო ქართლის რეგიონში 20 მლნ ლარამდე ღირებულების ინფრასტრუქტურული
           პროექტები დაიწყება
         </p>
-        <p className=" body-regular text-black_600">
-          განთავსების (ლისტინგის) ორგანიზატორი სომხეთის ბანკი სს “არდშიბანკია”.
-          ობლიგაციის ნომინალი - 1000 USD
-        </p>
+        {breakpoints !== "mobile" && (
+          <p className=" body-regular text-black_600">
+            განთავსების (ლისტინგის) ორგანიზატორი სომხეთის ბანკი სს
+            “არდშიბანკია”. ობლიგაციის ნომინალი - 1000 USD
+          </p>
+        )}
       </div>
     </section>
   );
