@@ -29,7 +29,7 @@ export function ListItem({
         <Clock /> {time} &#x2022; {date}
       </span>
 
-      <p className="headline3-small">{description}</p>
+      <p className="headline3-small max-w-[284px]">{description}</p>
       {!isLast && <div className="dashed_border my-4" />}
     </div>
   );

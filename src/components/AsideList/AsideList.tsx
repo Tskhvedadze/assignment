@@ -10,15 +10,18 @@ export type ListDataT = {
 
 type AsideListProps = {
   title: string;
+  className?: string;
   data: ListDataT[];
 };
 
-export function AsideList({ title, data }: AsideListProps) {
+export function AsideList({ title, data, className }: AsideListProps) {
   return (
-    <aside className=" py-4 pr-2 pl-4 rounded-[20px] bg-white max-w-full mobile:max-w-[448px] tablet:max-w-[304px]">
+    <aside
+      className={` h-fit py-4 pr-2 pl-4 rounded-[20px] bg-white max-w-full mobile:max-w-[448px] tablet:max-w-[304px] ${className}`}
+    >
       <h1 className="headline2-caps mb-[24px]">{title}</h1>
 
-      <div className="h-[618px] scrollbar">
+      <div className="scrollbar h-[330px] tablet:h-[560px]">
         {data.map(({ date, time, description, image, id }, index) => (
           <ListItem
             key={id}

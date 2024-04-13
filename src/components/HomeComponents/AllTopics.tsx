@@ -1,9 +1,15 @@
 import { allNewsData } from "../../assets/data";
 import { Card } from "../Card/Card";
 
-export function AllTopics() {
+type AllTopicsProps = {
+  className?: string;
+};
+
+export function AllTopics({ className }: AllTopicsProps) {
   return (
-    <section className="grid justify-items-center grid-cols-1 gap-6 desktopSM:gap-x-8 tablet:gap-y-5 tablet:gap-x-6 tablet:grid-cols-3 mobile:grid-cols-2 mobile:gap-y-6 mobile:gap-x-8">
+    <section
+      className={`grid justify-items-center grid-cols-1 gap-6 desktopSM:gap-x-8 tablet:gap-y-5 tablet:gap-x-6 tablet:grid-cols-3 mobile:grid-cols-2 mobile:gap-y-6 mobile:gap-x-8 ${className}`}
+    >
       {allNewsData.map((data) => (
         <Card
           key={data.id}
