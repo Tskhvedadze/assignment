@@ -13,3 +13,21 @@
     transparent 100%
   );
 }
+
+.swiper-primary .swiper-pagination-bullet {
+  @apply w-2 h-2 bg-white opacity-[50%];
+}
+
+.swiper-primary .swiper-pagination-bullet-active {
+  @apply w-[24px] bg-white rounded-lg opacity-[100%];
+}
+
+.swiper-primary .swiper-button-next,
+.swiper-primary .swiper-button-prev {
+  @apply bg-white p-[24px] rounded-full;
+}
+
+.swiper-primary .swiper-button-next::after,
+.swiper-primary .swiper-button-prev::after {
+  @apply text-black text-[14px] font-extrabold;
+}
