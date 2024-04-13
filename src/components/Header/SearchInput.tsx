@@ -2,10 +2,7 @@ import { useState } from "react";
 import SearchIcon from "../../assets/svg/Search.svg?react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { ButtonPrimary } from "../Buttons/ButtonPrimary";
-
-type SearchInputProps = {
-  onSearch: (searchTerm: string) => void;
-};
+import { SearchInputProps } from "../../types";
 
 export function SearchInput({ onSearch }: SearchInputProps) {
   const [searchTerm, setSearchTerm] = useState("");

@@ -1,3 +1,93 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dashed_border {
+  @apply h-[2px] border-0 bg-gradient-to-r;
+  background-size: 20px 1px;
+  background-image: linear-gradient(
+    90deg,
+    #f2f3f7,
+    #f2f3f7 50%,
+    transparent 50%,
+    transparent 100%
+  );
+}
+
+/* typography */
+
+.headline1,
+.headline2,
+.headline2-mobile {
+  @apply font-semibold tracking-[0.35px];
+}
+
+.headline2,
+.headline2-mobile {
+  @apply leading-[28px];
+}
+
+.headline1 {
+  @apply text-[20px] mobile:text-[24px] leading-[40px];
+}
+
+.headline2 {
+  @apply text-[20px];
+}
+
+.headline2-caps {
+  @apply text-[20px] leading-[28px] font-semibold font-notoCaps;
+}
+
+.headline2-caps-mobile {
+  @apply text-[16px] leading-[28px] font-semibold font-notoCaps;
+}
+
+.headline3 {
+  @apply text-[20px] leading-[20px] font-medium tracking-[0.20px];
+}
+
+.headline3-small {
+  @apply text-[14px] leading-[20px] font-normal tracking-[-0.24px];
+}
+
+.body-regular,
+.body-medium,
+.body-uppercase {
+  @apply text-[16px] leading-[24px] tracking-[-0.24px];
+}
+
+.body-uppercase {
+  @apply font-[500] font-notoCaps;
+}
+
+.body-medium {
+  @apply font-medium;
+}
+
+.body-regular {
+  @apply font-normal;
+}
+
+.small-text {
+  @apply text-[12px] leading-[16px] font-bold tracking-[0.20px];
+}
+
+/* carousel primary styles */
+.swiper-primary .swiper-pagination-bullet {
+  @apply w-2 h-2 bg-white opacity-[50%];
+}
+
+.swiper-primary .swiper-pagination-bullet-active {
+  @apply w-[24px] bg-white rounded-lg opacity-[100%];
+}
+
+.swiper-primary .swiper-button-next,
+.swiper-primary .swiper-button-prev {
+  @apply bg-white p-[24px] rounded-full;
+}
+
+.swiper-primary .swiper-button-next::after,
+.swiper-primary .swiper-button-prev::after {
+  @apply text-black text-[14px] font-extrabold;
+}

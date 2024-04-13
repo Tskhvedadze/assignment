@@ -15,20 +15,19 @@ export function Navigation() {
   return (
     <nav className="desktopSM:w-full flex gap-8 justify-center items-center">
       {headerData.slice(0, slicePoint).map((data) => (
-        <li
-          className=" list-none font-noto leading-6 font-medium text-black_600"
-          key={data.id}
-        >
-          <a href={data.route}>{data.text}</a>
+        <li className=" list-none text-black_600" key={data.id}>
+          <a className=" body-uppercase" href={data.route}>
+            {data.text}
+          </a>
         </li>
       ))}
       <div
-        className="relative font-noto leading-6 font-medium text-black_600 cursor-pointer"
+        className="relative text-black_600 cursor-pointer"
         onMouseEnter={mouseEnterHandler}
         onMouseLeave={mouseLeaveHandler}
       >
         <div className="flex">
-          <p>სხვა</p>
+          <p className=" body-uppercase">სხვა</p>
           <Arrow
             className={`transition-transform transform ${
               visible ? "rotate-180" : ""
@@ -42,7 +41,9 @@ export function Navigation() {
                 className="text-black_600 text-nowrap py-2 px-4 w-full"
                 key={data.id}
               >
-                <a href={data.route}>{data.text}</a>
+                <a className=" body-uppercase" href={data.route}>
+                  {data.text}
+                </a>
               </li>
             ))}
           </ul>
